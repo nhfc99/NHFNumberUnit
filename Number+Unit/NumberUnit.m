@@ -11,31 +11,11 @@
 @implementation NumberUnit
 
 + (NSString *)formatFloat:(CGFloat)data{
-    CGFloat one = [[NSString stringWithFormat:@"%.1f", data] floatValue];
-    CGFloat two = [[NSString stringWithFormat:@"%.2f", data] floatValue];
-    if (one == data) {
-        return [NSString stringWithFormat:@"%.1f", data];
-    }
-    
-    if (two == data) {
-        return [NSString stringWithFormat:@"%.2f", data];
-    }
-    
     return [NSString stringWithFormat:@"%.2f", data];
 }
 
 + (NSString *)formatFloatThree:(CGFloat)data{
-    CGFloat one = [[NSString stringWithFormat:@"%.1f", data] floatValue];
-    CGFloat two = [[NSString stringWithFormat:@"%.2f", data] floatValue];
-    if (one == data) {
-        return [NSString stringWithFormat:@"%.1f00", data];
-    }
-    
-    if (two == data) {
-        return [NSString stringWithFormat:@"%.2f00", data];
-    }
-    
-    return [NSString stringWithFormat:@"%.2f", data];
+    return [NSString stringWithFormat:@"%.3f", data];
 }
 
 @end
