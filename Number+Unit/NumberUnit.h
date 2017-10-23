@@ -28,4 +28,17 @@
  */
 + (NSString *)formatFloatThree:(CGFloat)data;
 
+
+/**
+ 处理精度的问题
+
+ @param price
+ @param roundingMode
+ @param position
+ @return
+ */
++ (NSDecimalNumber *)notRounding:(CGFloat)price
+                    roundingMode:(NSRoundingMode)roundingMode
+                      afterPoint:(NSInteger)position;
+
 @end

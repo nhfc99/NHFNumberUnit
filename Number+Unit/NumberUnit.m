@@ -11,11 +11,21 @@
 @implementation NumberUnit
 
 + (NSString *)formatFloat:(CGFloat)data{
-    return [NSString stringWithFormat:@"%.2f", data];
+    return [[NumberUnit notRounding:data roundingMode:NSRoundPlain afterPoint:2] stringValue];
 }
 
-+ (NSString *)formatFloatThree:(CGFloat)data{
-    return [NSString stringWithFormat:@"%.3f", data];
++ (NSString *)formatFloatThree:(CGFloat)data {
+    return [[NumberUnit notRounding:data roundingMode:NSRoundPlain afterPoint:3] stringValue];
+}
+
++ (NSDecimalNumber *)notRounding:(CGFloat)price
+                    roundingMode:(NSRoundingMode)roundingMode
+                      afterPoint:(NSInteger)position {
+    NSDecimalNumberHandler* roundingBehavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:roundingMode scale:position raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    
+    NSDecimalNumber *ouncesDecimal = [[NSDecimalNumber alloc] initWithFloat:price];
+    NSDecimalNumber *resultRoundedOunces = [ouncesDecimal decimalNumberByRoundingAccordingToBehavior:roundingBehavior];
+    return resultRoundedOunces;
 }
 
 @end
