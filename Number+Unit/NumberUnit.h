@@ -41,4 +41,19 @@
                     roundingMode:(NSRoundingMode)roundingMode
                       afterPoint:(NSInteger)position;
 
+
+/**
+ 加精度
+
+ @param resourceDecimalNumber
+ @param price
+ @param roundingMode
+ @param position
+ @return 
+ */
++ (NSDecimalNumber *)addNSDecimalNumberByNumber:(NSDecimalNumber *)resourceDecimalNumber
+                                           data:(CGFloat)price
+                                   roundingMode:(NSRoundingMode)roundingMode
+                                     afterPoint:(NSInteger)position;
+
 @end
