@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NHFNumberUnit"
-  s.version          = "1.0.4"
+  s.version          = "1.0.5"
   s.summary          = "对价格等参数进行格式化处理操作"
   s.homepage         = "https://github.com/nhfc99/NHFNumberUnit"
   s.license          = 'MIT'
